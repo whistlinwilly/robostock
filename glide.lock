@@ -1,6 +1,12 @@
-hash: a43c65c1a3504d07522aa5704d268e4fc93ee3dd7eb5a5e8e0c5db7695024c36
-updated: 2016-10-26T04:18:08.85684915Z
+hash: 18d9aaafebf217ac6834b8af5175d0cf676bfaf66242b963a643cad054b60107
+updated: 2016-10-28T03:42:36.888927308Z
 imports:
+- name: github.com/jlaffaye/ftp
+  version: 025815df64030c144b86e368fedf80ee195fe464
+- name: github.com/uber-go/atomic
+  version: 9e99152552a6ce13fa3b2ce4a9c4fb117cca4506
+- name: github.com/uber-go/zap
+  version: f2929c57adb5be8fb03cad9a6912c509a5cb60af
 - name: github.com/urfave/cli
   version: a14d7d367bc02b1f57d88de97926727f2d936387
 testImports: []
