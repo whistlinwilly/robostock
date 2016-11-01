@@ -1,6 +1,8 @@
-hash: 18d9aaafebf217ac6834b8af5175d0cf676bfaf66242b963a643cad054b60107
-updated: 2016-10-28T03:42:36.888927308Z
+hash: 7712da3f04d3f1beb47e6ac6457f773083b27fae615e3ea78dd78413a6deabe4
+updated: 2016-11-01T02:55:26.174552258Z
 imports:
+- name: github.com/fxsjy/gonn
+  version: bb82a6c319ea296cf765ab9b9d08a6af9435cc1a
 - name: github.com/jlaffaye/ftp
   version: 025815df64030c144b86e368fedf80ee195fe464
 - name: github.com/uber-go/atomic

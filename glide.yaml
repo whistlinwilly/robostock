@@ -3,3 +3,4 @@ import:
 - package: github.com/urfave/cli
   version: ^1.18.1
 - package: github.com/uber-go/zap
+- package: github.com/fxsjy/gonn
