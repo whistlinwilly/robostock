@@ -14,7 +14,7 @@ const RATE2 float64 = 0.1
 
 // Will need to corolate to RAM at some point
 const MAX_DATASET_SIZE int = 100000
-const TRAIN_CYCLES int = 200
+const TRAIN_CYCLES int = 10000
 const NEURAL_FILE = "/tmp/neural"
 
 type Neural struct {
