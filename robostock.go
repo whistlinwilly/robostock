@@ -23,7 +23,7 @@ func main() {
 			Aliases: []string{"f"},
 			Usage:   "Fetch and output a single sample training datapoint",
 			Action: func(c *cli.Context) error {
-				d := datasource.New(logger, PTS_PER_SET + 1)
+				d := datasource.New(logger, PTS_PER_SET+1)
 				n := neural.New(PTS_PER_SET)
 				input := make([][]float64, DATASET_SIZE)
 				output := make([][]float64, DATASET_SIZE)
@@ -38,7 +38,8 @@ func main() {
 					output[x] = []float64{(l[0] - l[1]) / l[1]}
 				}
 				n.AddDataset(input, output)
-				fmt.Printf("Finished.")
+				n.Save()
+				fmt.Println("Finished.")
 				return nil
 			},
 		},
