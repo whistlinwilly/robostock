@@ -51,3 +51,7 @@ func (n *Neural) train() {
 func (n *Neural) Save() {
 	gonn.DumpNN(NEURAL_FILE, n.nn)
 }
+
+func (n *Neural) Test(input []float64) float64 {
+	return n.nn.Forward(input)[0]
+}

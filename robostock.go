@@ -24,6 +24,21 @@ func main() {
 			Usage:   "Fetch and output a single sample training datapoint",
 			Action: func(c *cli.Context) error {
 				d := datasource.New(logger, PTS_PER_SET+1)
+				l, err := d.Next()
+				if err != nil {
+					fmt.Println("Bad sample. Try again...")
+				} else {
+					fmt.Printf("%v\n", l)
+				}
+				return nil
+			},
+		},
+		{
+			Name:    "train",
+			Aliases: []string{},
+			Usage:   "Fetch data and train neural network on sample",
+			Action: func(c *cli.Context) error {
+				d := datasource.New(logger, PTS_PER_SET+1)
 				n := neural.New(PTS_PER_SET)
 				input := make([][]float64, DATASET_SIZE)
 				output := make([][]float64, DATASET_SIZE)
@@ -40,6 +55,24 @@ func main() {
 				n.AddDataset(input, output)
 				n.Save()
 				fmt.Println("Finished.")
+				return nil
+			},
+		},
+		{
+			Name:    "test",
+			Aliases: []string{"t"},
+			Usage:   "Fetch a single datapoint and test against neural network",
+			Action: func(c *cli.Context) error {
+				d := datasource.New(logger, PTS_PER_SET+1)
+				n := neural.New(PTS_PER_SET)
+				l, err := d.Next()
+				if err != nil {
+					fmt.Printf("Bad sample. Try again...")
+					return nil
+				} else {
+					correct := (l[0] - l[1]) / l[1]
+					fmt.Printf("Estimated: %v, Actual: %v, Data: %v\n", n.Test(l[1:]), correct, l)
+				}
 				return nil
 			},
 		},
